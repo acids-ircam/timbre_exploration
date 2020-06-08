@@ -22,6 +22,8 @@ We can see that the codebook embeds a bell shapped distribution of centroid valu
 
 <audio controls><source src="Audio_Exemple/violin_centroid_exp.wav"></audio>
 
+&nbsp;
+
 **controlling other descriptors and timbre models**
 
 This process can be applied to other timbre models and other acoustic descriptors (as well as different target curves). We provide additional examples of this.
