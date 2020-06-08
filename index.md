@@ -31,7 +31,7 @@ This process can be applied to other timbre models and other acoustic descriptor
 | instruments | target |
 |  :---:  | :---:  |
 | <p align="center"> <img src="figures/violin_fundamental_decode_exp.png"> </p> | <p align="center"> <img src="figures/violin_fundamental_decode_sin.png"> </p> |
-| <audio controls><source src="Audio_Exemple/violin_fundamental_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/violin_fundamental_exp.wav"></audio> |
+| <audio controls><source src="Audio_Exemple/violin_fundamental_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/violin_fundamental_sin.wav"></audio> |
 
 &nbsp;
 
