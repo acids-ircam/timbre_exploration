@@ -34,6 +34,8 @@ This process can be applied to other timbre models and other acoustic descriptor
 | <audio controls><source src="Audio_Exemple/violin_fundamental_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/violin_fundamental_sin.wav"></audio> |
 | <img src="figures/sing_fem_fundamental_decode_exp.png"> | <img src="figures/sing_fundamental_decode_sin.png"> |
 | <audio controls><source src="Audio_Exemple/sing_fem_fundamental_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/sing_fundamental_sin.wav"></audio> |
+| <img src="figures/trumpet_bandwidth_decode_exp.png"> | <img src="figures/horn_bandwidth_decode_sin.png"> |
+| <audio controls><source src="Audio_Exemple/trumpet_bandwidth_decode_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/horn_bandwidth_sin.wav"></audio> |
 
 &nbsp;
 
