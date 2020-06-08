@@ -28,7 +28,6 @@ We can see that the codebook embeds a bell shapped distribution of centroid valu
 
 This process can be applied to other timbre models and other acoustic descriptors (as well as different target curves). We provide additional examples of this.
 
-| instruments | target |
 |  :---:  | :---:  |
 | <p align="center"> <img src="figures/violin_fundamental_decode_exp.png"> </p> | <p align="center"> <img src="figures/violin_fundamental_decode_sin.png"> </p> |
 | <audio controls><source src="Audio_Exemple/violin_fundamental_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/violin_fundamental_sin.wav"></audio> |
