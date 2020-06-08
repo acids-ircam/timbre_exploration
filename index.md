@@ -8,6 +8,10 @@ Using the previous analysis, we can draw an acoustic descriptor target and match
 
 <p align="center"> <img src="figures/violin_centroid_visualize.png"> </p>
 
+We can see that the codebook embeds a bell shapped distribution of centroid values centred around a value of 2000. The latent projections are partially organized consistenly with this distribution. We see that the color gradient is globally distributed from high values (bottom left to middle in dark grays) to low values (middle right in light grays). Although the local structure is not consistent and the neighborhood of each projection does not relate to the nearest elements in terms of acoustic value. For that reason, we directly order series of latent codes by matching their acoustic descriptor values to a target. When decoding such series, we observe that the audio can approximately follow the desired target.
+
+<p align="center"> <img src="figures/violin_centroid_decode_sin.png"> </p>
+
 
 ## References
 
