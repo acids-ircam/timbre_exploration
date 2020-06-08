@@ -12,6 +12,12 @@ We can see that the codebook embeds a bell shapped distribution of centroid valu
 
 <p align="center"> <img src="figures/violin_centroid_decode_sin.png"> </p>
 
+<audio controls><source src="Audio_Exemple/violin_centroid_sin.wav"></audio>
+
+<p align="center"> <img src="figures/violin_centroid_decode_exp.png"> </p>
+
+<audio controls><source src="Audio_Exemple/violin_centroid_exp.wav"></audio>
+
 
 ## References
 
