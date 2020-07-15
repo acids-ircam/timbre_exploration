@@ -1,4 +1,4 @@
-## Continous latent space
+## Continuous latent space
 
 In this section, we present several results from the continous latent model performing various tasks like style transfer, latent interpolation, and feedback shaping.
 
