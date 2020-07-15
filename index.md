@@ -22,6 +22,23 @@ The following examples show the melspectrogram corresponding to the original sam
 
 <audio controls src="Audio_Exemple/wavae_strings/BtoA.wav"></audio>
 
+&nbsp;
+
+### Feedback shaping
+
+Using our realtime puredata implementation, we can easily feed the model with its own output, filtered with a bandpass filter defined by its center frequency f and quality factor Q, as described in the figure below.
+
+<p align="center"> <img src="Audio_Exemple/wavae_scream_feedback/feedback.png"> </p>
+
+This gives a way to shape the model's generation based on a user-defined spectral shape.
+
+<p align="center"> <img src="Audio_Exemple/wavae_scream_feedback/figure.png"> </p>
+
+<audio controls src="Audio_Exemple/wavae_scream_feedback/audio.wav"></audio>
+
+&nbsp;
+
+
 
 ## Discrete latent space analyzed and controlled with target acoustic descriptors
 
