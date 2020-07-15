@@ -1,7 +1,28 @@
 ## Continous latent space
 
-<audio controls src=../strings/AtoB.wav></audio>
+In this section, we present several results from the continous latent model performing various tasks like style transfer, latent interpolation, and feedback shaping.
 
+### Interpolation
+
+Here we show how the continous model can perform a linear interpolation between two input audio samples. Both samples are first encoded into a latent path $z_a$ and $z_b$ of size $N$, then we compute a *interpolated* path
+
+$$
+z[n] = z_a[n] * (1 - n/N) + z_b * (n/N)
+$$
+
+The following examples show the melspectrogram corresponding to the original samples and the interpolated ones. The audio examples will play in order sample A, sample B and the interpolation.
+
+---
+
+<p align="center"> <img src="Audio_Exemple/wavae_strings/AtoB.png"> </p>
+
+<audio controls src="Audio_Exemple/wavae_strings/AtoB.wav"></audio>
+
+---
+
+<p align="center"> <img src="Audio_Exemple/wavae_strings/BtoA.png"> </p>
+
+<audio controls src="Audio_Exemple/wavae_strings/BtoA.wav"></audio>
 
 
 ## Discrete latent space analyzed and controlled with target acoustic descriptors
