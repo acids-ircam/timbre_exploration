@@ -1,3 +1,9 @@
+## Continous latent space
+
+<audio controls src=../strings/AtoB.wav></audio>
+
+
+
 ## Discrete latent space analyzed and controlled with target acoustic descriptors
 
 In this section, we give examples from VQ-VAE models for different individual timbre domains. Each model has been trained on a single class e.g. violin recordings or singing voices. We can first visualize how the latent codebook embeds the short-term timbre features by scattering in 2D the quantization vectors and coloring with a gradient that accounts to their relative descriptor values. We use the projection of the PCA from the latent dimensionnality to the 2D visualization. We can as well plot the corresponding histogram of acoustic descriptor values to view their distribution in the codebook.
