@@ -34,7 +34,10 @@ Using our realtime puredata implementation, we can easily feed the model with it
 
 <p align="center"> <img src="Audio_Exemple/wavae_scream_feedback/feedback.png"> </p>
 
-This gives a way to shape the model's generation based on a user-defined spectral shape.
+This gives a way to shape the model's generation based on a user-defined spectral shape. The puredata patch used to produce the following example is the one below
+
+<p align="center"> <img src="Audio_Exemple/wavae_scream_feedback/patch.png"> </p>
+
 
 **Dataset**: Screams
 
