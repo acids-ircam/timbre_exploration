@@ -4,7 +4,7 @@ In this section, we present several results from the continous latent model perf
 
 ### Interpolation
 
-Here we show how the continous model can perform a linear interpolation between two input audio samples. Both samples are first encoded into a latent path z_a and z_b of size N, then we compute a *interpolated* path:
+Here we show how the continuous model can perform a linear interpolation between two input audio samples. Both samples are first encoded into a latent path z_a and z_b of size N, then we compute an *interpolated* path:
 
 z[n] = z_a[n] * (1 - n/N) + z_b * (n/N)
 
