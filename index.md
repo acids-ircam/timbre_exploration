@@ -1,6 +1,15 @@
-## Continuous latent space
+# Continuous latent space
 
-In this section, we present several results from the continous latent model performing various tasks like style transfer, latent interpolation, and feedback shaping.
+In this section, we present several results from the continous latent model performing various tasks like style transfer, latent interpolation, and integration within two framework (offline and realtime).
+
+## Offline interface
+
+We provide a graphical interface in order to ease the process of using deep learning models for general audio manipulation. 
+
+<p align="center"> <img src="figures/playground.jpeg"> </p>
+
+This interface expose the latent path infered by the model from a input audio sample. Several mathematical operators are available to scale, randomize, bias or reverse the latent path, as well as a curve editing window, allowing direct modification of each dimension. We also provide an interpolation pseudo-plane, allowing a weighted linear interpolation between four latent paths. The following examples have been generated using this interface.
+
 
 ### Interpolation
 
@@ -26,7 +35,26 @@ The following examples show the melspectrogram corresponding to the original sam
 
 <audio controls src="Audio_Exemple/wavae_strings/BtoA.wav"></audio>
 
+---
+
 &nbsp;
+
+### Style transfer
+
+By giving a model an input sample that is out of the domain on which it has been trained, we can get some sort of style transfer:
+
+| Domain    | Audio                                                                      |
+| --------- | -------------------------------------------------------------------------- |
+| Original  | <audio controls src="Audio_Exemple/wavae_style_transfer/cutecat.wav">      |
+| Strings   | <audio controls src="Audio_Exemple/wavae_style_transfer/cat_alex.wav">     |
+| Screams   | <audio controls src="Audio_Exemple/wavae_style_transfer/cat_scream.wav">   |
+| Singing   | <audio controls src="Audio_Exemple/wavae_style_transfer/cat_vocalset.wav"> |
+| Spoken    | <audio controls src="Audio_Exemple/wavae_style_transfer/cat_voice.wav">    |
+
+&nbsp;
+
+
+## Realtime interface
 
 ### Feedback shaping
 
@@ -50,7 +78,7 @@ This gives a way to shape the model's generation based on a user-defined spectra
 
 
 
-## Discrete latent space analyzed and controlled with target acoustic descriptors
+# Discrete latent space analyzed and controlled with target acoustic descriptors
 
 In this section, we give examples from VQ-VAE models for different individual timbre domains. Each model has been trained on a single class e.g. violin recordings or singing voices. We can first visualize how the latent codebook embeds the short-term timbre features by scattering in 2D the quantization vectors and coloring with a gradient that accounts to their relative descriptor values. We use the projection of the PCA from the latent dimensionnality to the 2D visualization. We can as well plot the corresponding histogram of acoustic descriptor values to view their distribution in the codebook.
 
