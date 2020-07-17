@@ -133,6 +133,7 @@ Variational Audio Encoder possess a huge potential to reveal new types of musica
 
 <p align="center">
 Sound material (Sinus)
+ 
 <video id="Sinus" class="video-js vjs-default-skin" controls preload="auto" width="600" height="288" data-setup="{}">
 <source src="Audio_Exemple/Exemple_Sinus.mp4" type='video/mp4'>
 </video>
@@ -140,6 +141,7 @@ Sound material (Sinus)
 
 <p align="center">
 Sound material (Percussions)
+ 
 <video id="Percs" class="video-js vjs-default-skin" controls preload="auto" width="600" height="288" data-setup="{}">
 <source src="Audio_Exemple/Exemple_Percs.mp4" type='video/mp4'>
 </video>
