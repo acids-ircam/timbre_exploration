@@ -123,8 +123,8 @@ This process can be applied to other timbre models and other acoustic descriptor
 
 **Creative application**
 
-<video id="Sinus" class="video-js vjs-default-skin" controls preload="auto" width="600" height="288" data-setup="{}">
-<source src="video/Audio_Exemple/Exemple_Sinus.mkv" type='video/mkv'>
+<video id="Percs" class="video-js vjs-default-skin" controls preload="auto" width="600" height="288" data-setup="{}">
+<source src="Audio_Exemple/Exemple_Percs.mp4" type='video/mp4'>
 </video>
 
 Variational Audio Encoder possess a huge potential to reveal new types of musical materials hidden in a specific dataset. How sounds interact with each other in this type of environment bring uncommon particularities and opportunities. Despite the fact I use really basic interaction with the models (mostly midi data), I was really impressed by the difference between the sound results and the gestures we used to produce these sounds. These gesture/sound interactions were also different when using different datasets. This particularity is probably the most powerful add-on to the huge amount of sound processing tools. The composer can define a sound environment through the datasets selection, but the resulting model will be unique : one gesture on a specific dataset will produce different results on a different one. This physicality forces a new working path than working with a more common synthesizer where, most of the time, we can define more easily these gestural interactions in order to develop some habits. At the end, the composition process reminds me of the early precepts of acousmatic music where the goal of the composer is mainly to hear and develop a form through listening rather than develop musical ideas with a predetermined composition system. An example of composition  The piece *...et... lisse.* is based on four datasets and three sound materials : sinus, voice and percussions. One aspect 
