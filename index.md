@@ -129,6 +129,10 @@ This process can be applied to other timbre models and other acoustic descriptor
 
 **Creative application**
 
+<video id="Sinus" class="video-js vjs-default-skin" controls preload="auto" width="600" height="288" data-setup="{}">
+<source src="Audio_Exemple/Exemple_Sinus.mp4" type='video/mp4'>
+</video>
+
 <video id="Percs" class="video-js vjs-default-skin" controls preload="auto" width="600" height="288" data-setup="{}">
 <source src="Audio_Exemple/Exemple_Percs.mp4" type='video/mp4'>
 </video>
