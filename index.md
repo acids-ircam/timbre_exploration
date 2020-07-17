@@ -1,3 +1,9 @@
+<!--
+title: TIMBRE LATENT SPACE: EXPLORATION AND CREATIVE ASPECTS.
+description: Additional materials for the paper submission to the 2nd International Conference on Timbre.
+-->
+
+
 # Continuous latent space
 
 In this section, we present several results from the continous latent model performing various tasks like style transfer, latent interpolation, and integration within two framework (offline and realtime).
