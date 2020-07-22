@@ -21,13 +21,13 @@
 title: "TIMBRE LATENT SPACE: EXPLORATION AND CREATIVE ASPECTS"
 description: >- # this means to ignore newlines until "baseurl:"
   Additional materials for the paper submission to the 2nd International Conference on Timbre.
-baseurl: "/timbre-exploration/" # the subpath of your site, e.g. /blog
+baseurl: "/timbre_exploration" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  acids-ircam
 
 # Build settings
+# theme: jekyll-theme-cayman
 theme: minima
-
 
 # Exclude from processing.
 # The following items will not be processed, by default.
