@@ -1,145 +1,17 @@
-<!--
-title: TIMBRE LATENT SPACE: EXPLORATION AND CREATIVE ASPECTS.
-description: Additional materials for the paper submission to the 2nd International Conference on Timbre.
--->
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-
-# Continuous latent space
-
-In this section, we present several results from the continous latent model performing various tasks like style transfer, latent interpolation, and integration within two framework (offline and realtime).
-
-## Offline interface
-
-We provide a graphical interface in order to ease the process of using deep learning models for general audio manipulation. 
-
-<p align="center"> <img src="figures/playground.jpeg"> </p>
-
-This interface expose the latent path infered by the model from a input audio sample. Several mathematical operators are available to scale, randomize, bias or reverse the latent path, as well as a curve editing window, allowing direct modification of each dimension. We also provide an interpolation pseudo-plane, allowing a weighted linear interpolation between four latent paths. The following examples have been generated using this interface.
-
-
-### Interpolation
-
-Here we show how the continuous model can perform a linear interpolation between two input audio samples. Both samples are first encoded into a latent path z_a and z_b of size N, then we compute an *interpolated* path:
-
-z[n] = z_a[n] * (1 - n/N) + z_b * (n/N)
-
-The following examples show the melspectrogram corresponding to the original samples and the interpolated ones. The audio examples will play in order sample A, sample B and the interpolation.
-
+layout: home
 ---
 
-**Dataset**: Strings
+The latent space of a VAE extracts salient factors of variation in the data, such as timbre properties, and can be inverted to audio. These latent variables can be used as sound synthesis controls, however they are highly-dimensional and usually not disentangled. This precludes intuitive interactions and identification of the dimensions that account for some specific sound properties. We explore the potential of VAEs for controllable timbre synthesis and creative interactions using two types of representation.
 
-<p align="center"> <img src="Audio_Exemple/wavae_strings/AtoB.png"> </p>
+One model learns a continuous latent representation (see [this page](/continuous)), it allows interpolations and expressive manipulations based on specifically designed interactive interfaces (Max/MSP, PureData).
 
-<audio controls src="Audio_Exemple/wavae_strings/AtoB.wav"></audio>
+Another model learns a discrete latent representation (see [this page](/discrete)), this constraint allows a direct identification of the acoustic properties of each short-term latent feature and explicit descriptor-based synthesis.
 
----
-
-**Dataset**: Strings
-
-<p align="center"> <img src="Audio_Exemple/wavae_strings/BtoA.png"> </p>
-
-<audio controls src="Audio_Exemple/wavae_strings/BtoA.wav"></audio>
-
----
-
-&nbsp;
-
-### Style transfer
-
-By giving a model an input sample that is out of the domain on which it has been trained, we can get some sort of style transfer:
-
-| Domain    | Audio                                                                      |
-| :-------: | :------------------------------------------------------------------------: |
-| Original  | <audio controls src="Audio_Exemple/wavae_style_transfer/cutecat.wav">      |
-| Strings   | <audio controls src="Audio_Exemple/wavae_style_transfer/cat_alex.wav">     |
-| Screams   | <audio controls src="Audio_Exemple/wavae_style_transfer/cat_scream.wav">   |
-| Singing   | <audio controls src="Audio_Exemple/wavae_style_transfer/cat_vocalset.wav"> |
-| Spoken    | <audio controls src="Audio_Exemple/wavae_style_transfer/cat_voice.wav">    |
-
-&nbsp;
-
-
-## Realtime interface
-
-### Feedback shaping
-
-Using our realtime puredata implementation, we can easily feed the model with its own output, filtered with a bandpass filter defined by its center frequency f and quality factor Q, as described in the figure below.
-
-<p align="center"> <img src="Audio_Exemple/wavae_scream_feedback/feedback.png"> </p>
-
-This gives a way to shape the model's generation based on a user-defined spectral shape. The puredata patch used to produce the following example is the one below
-
-<p align="center"> <img src="Audio_Exemple/wavae_scream_feedback/patch.png"> </p>
-
-
-**Dataset**: Screams
-
-
-<p align="center"> <img src="Audio_Exemple/wavae_scream_feedback/figure.png"> </p>
-
-<audio controls src="Audio_Exemple/wavae_scream_feedback/audio.wav"></audio>
-
-&nbsp;
-
-
-
-# Discrete latent space analyzed and controlled with target acoustic descriptors
-
-In this section, we give examples from VQ-VAE models for different individual timbre domains. Each model has been trained on a single class e.g. violin recordings or singing voices. We can first visualize how the latent codebook embeds the short-term timbre features by scattering in 2D the quantization vectors and coloring with a gradient that accounts to their relative descriptor values. We use the projection of the PCA from the latent dimensionnality to the 2D visualization. We can as well plot the corresponding histogram of acoustic descriptor values to view their distribution in the codebook.
-
-Using the previous analysis, we can draw an acoustic descriptor target and match the closest codebook vectors. These latent codes are decoded into audio that approximately follows the desired variation of acoustic descriptor. Besides the audio samples, we can plot spectrograms to visualize the sound synthesis and as well compute the acoustic descriptor over the generated audio for comparison with the provided target curve. As an example, we either use a target with sinusoidal shape or log/exp shapes.
-
-**visualization and control of a violin model analyzed wrt. centroid**
-
-<p align="center"> <img src="figures/violin_centroid_visualize.png"> </p>
-
-We can see that the codebook embeds a bell shapped distribution of centroid values centred around a value of 2000. The latent projections are partially organized consistenly with this distribution. We see that the color gradient is globally distributed from high values (bottom left to middle in dark grays) to low values (middle right in light grays). Although the local structure is not consistent and the neighborhood of each projection does not relate to the nearest elements in terms of acoustic value. For that reason, we directly order series of latent codes by matching their acoustic descriptor values to a target. When decoding such series, we observe that the audio can approximately follow the desired target.
-
-&nbsp;
-
-<p align="center"> <img src="figures/violin_centroid_decode_sin.png"> </p>
-
-<audio controls><source src="Audio_Exemple/violin_centroid_sin.wav"></audio>
-
-&nbsp;
-
-<p align="center"> <img src="figures/violin_centroid_decode_exp.png"> </p>
-
-<audio controls><source src="Audio_Exemple/violin_centroid_exp.wav"></audio>
-
-&nbsp;
-
-**controlling other descriptors and timbre models**
-
-This process can be applied to other timbre models and other acoustic descriptors (as well as different target curves). We provide additional examples of this.
-
-|    |   |
-|  :---:  | :---:  |
-| <img src="figures/violin_fundamental_decode_exp.png"> | <img src="figures/violin_fundamental_decode_sin.png"> |
-| <audio controls><source src="Audio_Exemple/violin_fundamental_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/violin_fundamental_sin.wav"></audio> |
-| <img src="figures/sing_fem_centroid_decode_exp.png"> | <img src="figures/sing_centroid_decode_sin.png"> |
-| <audio controls><source src="Audio_Exemple/sing_fem_centroid_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/sing_centroid_sin.wav"></audio> |
-| <img src="figures/sing_fem_fundamental_decode_exp.png"> | <img src="figures/sing_fundamental_decode_sin.png"> |
-| <audio controls><source src="Audio_Exemple/sing_fem_fundamental_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/sing_fundamental_sin.wav"></audio> |
-| <img src="figures/trumpet_bandwidth_decode_exp.png"> | <img src="figures/horn_bandwidth_decode_sin.png"> |
-| <audio controls><source src="Audio_Exemple/trumpet_bandwidth_exp.wav"></audio> | <audio controls><source src="Audio_Exemple/horn_bandwidth_sin.wav"></audio> |
-
-&nbsp;
-
-**Creative application**
-
-Variational Audio Encoder possesses a huge potential to reveal new types of musical materials hidden in a specific dataset. How sounds interact with each other in this type of environment brings uncommon particularities and opportunities. Despite the fact I use really basic interaction with the models (mostly midi data), I was really interested by the difference between the sound results and the gestures I use to produce these sounds. These gesture/sound interactions were also specific to a particular dataset. This feature is probably the most powerful add-on to the huge amount of sound processing tools. The composer can define a sound environment through the dataset selection, but the resulting model will be unique : the same gesture on a specific dataset will produce various results. This physicality forces a new working path than working with a more common synthesizer where, most of the time, we can define more easily these gestural interactions in order to develop some habits. At the end, the composition process reminds me of the early precepts of acousmatic music where the goal of the composer is mainly to hear and develop a form through listening rather than develop musical ideas with a predetermined composition system. The piece *...et... lisse.* is based on four datasets and three sound materials. All sounds come from the models describe in this paper.
-
-|                              |                                                   |
-| :--------------------------: | :-----------------------------------------------: |
-|Sound material (Sinus)        | {% include youtubeplayer.html id="CAzd7G3AVlA" %} |
-| Sound material (Percussions) | {% include youtubeplayer.html id="YucatMHkQqg" %} |
-| ...et... lisse.              | <audio controls src="Audio_Exemple/Lisse.mp3">    |
-
-&nbsp;
-
-&nbsp;
+In this paper, we propose new methods for exploring latent synthesis of musical timbre using these two representations and report creative applications led in cooperation with two music composers (see [this page](/creative)).
 
 ## References
 
