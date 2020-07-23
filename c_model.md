@@ -65,7 +65,7 @@ The following examples show the melspectrogram corresponding to the original sam
 
 By giving a model an input sample that is out of the domain on which it has been trained, we can get some sort of style transfer:
 
-<p align="center"> <img src="figures/compa_mel.png<"> </p>
+<p align="center"> <img src="figures/compa_mel.png"> </p>
 &nbsp;
 
 | Domain    | Audio                                                                      |
