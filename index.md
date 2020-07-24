@@ -2,7 +2,7 @@
 layout: home
 ---
 
-**Website construction in progress**
+**Website under construction.**
 
 The latent space of a VAE extracts salient factors of variation in the data, such as timbre properties, and can be inverted to audio. These latent variables can be used as sound synthesis controls, however they are highly-dimensional and usually not disentangled. This precludes intuitive interactions and identification of the dimensions that account for some specific sound properties. We explore the potential of VAEs for controllable timbre synthesis and creative interactions using two types of representation.
 
