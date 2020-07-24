@@ -22,7 +22,15 @@ permalink: continuous
 </style>
 
 
-In this section, we present several results from the continous latent model performing various tasks like style transfer, latent interpolation, and integration within two framework (offline and realtime).
+In this section, we present the overall architecture of the continuous model, as well as several results from tasks like style transfer, latent interpolation, and integration within two framework (offline and realtime).
+
+## Continuous model's architecture
+
+The continuous model is itself composed of two submodels, a **mel-spectrogram variational autoencoder**, and a **mel-spectrogram to waveform** model (we use a modified [melGAN](https://arxiv.org/abs/1910.06711)). The total architecture can be found on the figure below. The mel-spectrogram variational autoencoder is a fully convolutional neural network composed of several stacked layers for both the encoder and the decoder. We have added a Kullback-Leibler divergence between the encoder's output and a standard Gaussian as a prior regularization, in order to enforce local smoothness inside the latent space. We also added an adversarial regularization to make the latent space agnostic with relation to **loudness**, so that it can be either computed deterministically (training / inference) or controlled manually (inference).
+
+<p align="center"> <img src="figures/wavae_diagram.svg"> </p>
+
+In order to make the model compatible with a realtime application, we've designed a specific convolutional module wrapping a standard convolution module with a circular buffer mechanism. The continuous model can [be downloaded here](https://github.com/acids-ircam/wavae)
 
 ## Offline interface
 
@@ -94,9 +102,10 @@ This gives a way to shape the model's generation based on a user-defined spectra
 
 **Dataset**: Screams
 
-
-<p align="center"> <img src="Audio_Exemple/wavae_scream_feedback/figure.png"> </p>
-
 <audio controls src="Audio_Exemple/wavae_scream_feedback/audio.wav"></audio>
 
 &nbsp;
+
+<p align="center"> <img src="Audio_Exemple/wavae_scream_feedback/figure.png"> </p>
+
+
